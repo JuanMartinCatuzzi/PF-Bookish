@@ -1,10 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="imagen">
-    <img src="/img/bookish-02.jpg" alt="" class="cabeza">
-    <h2 class="bienvenido">¡Bienvenido, {{ Auth::user()->name }}!</h2>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <h2 class="home-frase">"LA PERSONA QUE NO LEE BUENOS LIBROS NO TIENE VENTAJA SOBRE EL QUE NO SABE LEER."</h2>
+        <p class="home-autor">-Mark Twain.</p>
+        <img class="d-block w-100" src="/img/bookish-02.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <h2 class="home-frase">"NO IMPORTA LO OCUPADO QUE PIENSAS QUE ESTÁS, DEBES ENCONTRAR TIEMPO PARA LEER, O ENTRÉGATE A UNA IGNORANCIA AUTOELEGIDA."</h2>
+        <p class="home-autor">-Confucio.</p>
+        <img class="d-block w-100" src="/img/bookish-02.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <h2 class="home-frase">"NO TE PREOCUPES POR EL FRACASO, SÓLO DEBES ACERTAR UNA VEZ."</h2>
+        <p class="home-autor">-Drew Houston.</p>
+        <img class="d-block w-100" src="/img/bookish-02.jpg" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
+
   <section class="productos">
       <div class="fondo-azul">
 

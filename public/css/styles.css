@@ -77,7 +77,7 @@ color: rgba(85,172,238 ,1);
 .menucorto {
   margin-left: auto;
   margin-right: auto;
-  color: rgb(157, 173, 186);
+  color: #FFF;;
 }
 .logo {
   width: 100px;
@@ -93,8 +93,19 @@ div.header-container{
   display: none;
 }
 
-a.logout{
-  
+div.titulo-container{
+  position: relative;
+}
+h1.seccion-titulo{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: #FFF;
+  font-family: 'Teko', sans-serif;
+}
+img.fondo-titulo{
+  height: 30vh;
 }
 /* HOME */
 main{
@@ -102,17 +113,28 @@ max-width: 1400px;
 margin-top: 178px;
 margin-left: auto;
 }
-div.imagen{
-  width: 100%;
+div.carousel-item{
+  height: 80vh;
   position: relative;
+}
+h2.home-frase{
+  color:#FFF;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+  font-family: 'Teko', sans-serif;
+}
+p.home-autor{
+    font-family: 'Teko', sans-serif;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 60%;
+    left: 50%;
+    color: #FFF;
 }
 img.cabeza{
   width: 100%;
-}
-h2.bienvenido{
-  position: absolute;
-  transform: translate(-50% -50%);
-  top: 20%;
 }
 section.productos{
   padding:5%;

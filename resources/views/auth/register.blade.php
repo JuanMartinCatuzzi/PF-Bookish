@@ -1,6 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
+
+                    <div class="titulo-container">
+                      <h1 class="seccion-titulo">REGISTRO</h1>
+                      <img src="/img/fondo-enc-register-09.jpg" class="fondo-titulo">
+                    </div>
                     <form method="POST" action="{{ route('register') }}" class="formulario">
                         @csrf
                         <div class="input-container">
