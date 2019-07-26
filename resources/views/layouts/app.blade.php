@@ -33,10 +33,10 @@
         </button>
         <div id="action"class="dropdown-content">
           <a href="#">PREGUNTAS FRECUENTES</a>
-          <a href="register.php">REGISTRARSE</a>
-          <a href="login.php">LOG IN </a>
+          <a href="{{ route('register') }}">REGISTRARSE</a>
+          <a href="{{ route('login') }}">LOG IN </a>
           <a href="#">PORQUE LEER CON BOOKISH</a>
-          <a href="categorias.php">CATEGORIAS</a>
+          <a href="#">CATEGORIAS</a>
           <a href="#">QUIENES SOMOS</a>
         </div>
       </div>
@@ -74,7 +74,7 @@
             <ul class="bookish header" role="navigation">
                 <li class="header"><i class="menulargo"></i>PORQUE LEER CON BOOKISH</li>
                 <li class="header"><i class="menulargo"></i>|</li>
-                <li class="header"><a href="categorias.php" class="menulargo header">CATEGORIAS</a></li>
+                <li class="header"><a href="#" class="menulargo header">CATEGORIAS</a></li>
                 <li class="header"><i class="menulargo"></i>|</li>
                 <li class="header"><i class="menulargo"></i>QUIENES SOMOS</li>
             </ul>
