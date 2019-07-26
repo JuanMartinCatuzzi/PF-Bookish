@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,51 +11,56 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+  <header class="header-entero">
+      <!--Menu con icono -->
+      <div class="header-container">
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn" id="action" href="action">
+        <i class="fa fa-ellipsis-v"></i>
+        </button>
+        <div id="action"class="dropdown-content">
+          <a href="#">PREGUNTAS FRECUENTES</a>
+          <a href="register.php">REGISTRARSE</a>
+          <a href="login.php">LOG IN </a>
+          <a href="#">PORQUE LEER CON BOOKISH</a>
+          <a href="categorias.php">CATEGORIAS</a>
+          <a href="#">QUIENES SOMOS</a>
+        </div>
+      </div>
+    </div>
+    <img src="img/Bookish.png" class="logo-mini" alt="">
+</div>
+<!--PRIMER FILA INCLUYENDO LOGO -->
+    <ul class="listagrande-header">
+      <li class="menucorto header" id="chau">PREGUNTAS FRECUENTES</li>
+      <li class="menucorto dentrodemenu"> <a href="{{route('home')}}"> <img class="logo" src="img/Bookish.png" alt=""></a></li>
+      <li class="menucorto header" id="chau">
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
+                                <a class="menucorto" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                                /
                             @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
+                                    <a class="menucorto" href="{{ route('register') }}">{{ __('Registrarse') }}</a>
                             @endif
+      </li>
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle menucorto" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item logout" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -67,14 +72,29 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <main class="py-4">
+            </ul>
+            <ul class="bookish header" role="navigation">
+                <li class="header"><i class="menulargo"></i>PORQUE LEER CON BOOKISH</li>
+                <li class="header"><i class="menulargo"></i>|</li>
+                <li class="header"><a href="categorias.php" class="menulargo header">CATEGORIAS</a></li>
+                <li class="header"><i class="menulargo"></i>|</li>
+                <li class="header"><i class="menulargo"></i>QUIENES SOMOS</li>
+            </ul>
+          </header>
+        <main>
             @yield('content')
         </main>
-    </div>
+        <footer>
+          <div class="flex-container">
+            <ul class="listagrande">
+              <li class="menucortobold">CONTACTO</li>
+              <li class="menucortomini">BOOKISH.LIBROS@GMAIL.COM</li>
+              <li class="menucortomini">+54 9 11 56541925</li>
+              <li class="menucortobold">SEGUINOS EN @BOOKISH.LIBROS</li>
+            </ul>
+            <div class="data"><img class="data" src="img/bookish-05.jpg" alt="">
+            </div>
+          </div>
+        </footer
 </body>
 </html>
