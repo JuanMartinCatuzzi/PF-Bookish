@@ -72,11 +72,11 @@
                         @endguest
             </ul>
             <ul class="bookish header" role="navigation">
-                <li class="header"><i class="menulargo"></i>PORQUE LEER CON BOOKISH</li>
+                <li class="header"><a href="/quienes-somos" class="menulargo">PORQUE LEER CON BOOKISH</a></li>
                 <li class="header"><i class="menulargo"></i>|</li>
                 <li class="header"><a href="#" class="menulargo header">CATEGORIAS</a></li>
                 <li class="header"><i class="menulargo"></i>|</li>
-                <li class="header"><i class="menulargo"></i>QUIENES SOMOS</li>
+                <li class="header"><a href="/quienes-somos" class="menulargo">QUIENES SOMOS</a></li>
             </ul>
           </header>
         <main>

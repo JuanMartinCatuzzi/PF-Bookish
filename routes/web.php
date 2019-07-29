@@ -15,3 +15,6 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/quienes-somos', function (){
+  return view('quienes-somos');
+});
