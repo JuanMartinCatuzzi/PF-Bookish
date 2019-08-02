@@ -16,11 +16,9 @@
 
       </div>
 
-    <div class="hijo" id="foto">
+    <div class="hijo quienes-somos">
         <h1 class="white">BOOKISH</h1>
-    </div>
-    <div class="otro-hijo" id="otra-foto">
-        <h1 class="white">BOOKISH</h1>
+        <img src="/img/fotolibros.jpg" id="foto">
     </div>
 
 </div>

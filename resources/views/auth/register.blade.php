@@ -66,7 +66,25 @@
                                     </span>
                                 @enderror
                         </div>
-
+                        <div class="input-container">
+                          <label for="province">Provincia:</label>
+                          <select class="form-input" name="province">
+                            <option value="Seleccionar" selected>Seleccionar</option>
+                            <option value=""></option>
+                          </select>
+                        </div>
+                        <div class="input-container">
+                          <label for="city">Ciudad:</label>
+                          <input type="text" class="form-control form-input" name="city" value="{{ old('city') }}"  autocomplete="city" autofocus>
+                        </div>
+                        <div class="input-container">
+                          <label for="street">Calle:</label>
+                          <input type="text" class="form-control form-input" name="street" value="{{ old('street') }}"  autocomplete="street" autofocus>
+                        </div>
+                        <div class="input-container">
+                          <label for="number">Altura:</label>
+                          <input type="number" class="form-control form-input" name="number" value="{{ old('number') }}"  autocomplete="number" autofocus>
+                        </div>
                         <div class="input-container">
                             <label for="occupation" class="form-label">{{ __('Ocupación') }}</label>
                                 <select class="form-input" name="occupation">

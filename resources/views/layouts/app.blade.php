@@ -36,7 +36,7 @@
           <a href="{{ route('register') }}">REGISTRARSE</a>
           <a href="{{ route('login') }}">LOG IN </a>
           <a href="#">PORQUE LEER CON BOOKISH</a>
-          <a href="#">CATEGORIAS</a>
+          <a href="/categorias">CATEGORIAS</a>
           <a href="#">QUIENES SOMOS</a>
         </div>
       </div>
@@ -72,11 +72,11 @@
                         @endguest
             </ul>
             <ul class="bookish header" role="navigation">
-                <li class="header"><a href="/quienes-somos" class="menulargo">PORQUE LEER CON BOOKISH</a></li>
+                <li class="header"><a href="/quienes-somos" class="header menulargo">PORQUE LEER CON BOOKISH</a></li>
                 <li class="header"><i class="menulargo"></i>|</li>
-                <li class="header"><a href="#" class="menulargo header">CATEGORIAS</a></li>
+                <li class="header"><a href="/categorias" class="menulargo header">CATEGORIAS</a></li>
                 <li class="header"><i class="menulargo"></i>|</li>
-                <li class="header"><a href="/quienes-somos" class="menulargo">QUIENES SOMOS</a></li>
+                <li class="header"><a href="/quienes-somos" class="header menulargo">QUIENES SOMOS</a></li>
             </ul>
           </header>
         <main>
@@ -94,5 +94,11 @@
             </div>
           </div>
         </footer>
+        <script src="js/app.js">
+
+        </script>
+        <script src="js/transitions.js">
+
+        </script>
 </body>
 </html>
