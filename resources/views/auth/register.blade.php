@@ -70,7 +70,8 @@
                           <label for="province">Provincia:</label>
                           <select class="form-input" name="province">
                             <option value="Seleccionar" selected>Seleccionar</option>
-                            <option value=""></option>
+                            <option value="Capital Federal">Capital Federal</option>
+                            <option value="Buenos Aires">Buenos Aires</option>
                           </select>
                         </div>
                         <div class="input-container">

@@ -268,7 +268,12 @@ div.input-container{
   margin-right: 35%;
   text-align: center;
   width: 30%;
-
+}
+.form-input-compra{
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  width: 70%;
 }
 a.olvide{
   color:#2D4F6B;
@@ -445,7 +450,7 @@ span{
   text-decoration: none;
   width: 25px;
 }
-button {
+button.categorias {
     display: inline-block;
     border: none;
     margin: 0;
@@ -457,15 +462,15 @@ button {
     text-align: center;
     border-radius: 12px;
 }
-button:hover,
-button:focus {
+button.categorias:hover,
+button.categorias:focus {
     background: #033442;
 }
-button:focus {
+button.categorias:focus {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
-button:active {
+button.categorias:active {
     transform: scale(0.99);
 }
 
@@ -527,7 +532,14 @@ button:active {
   color: white;
   text-align: center;
 }
-
+li.titulo-libro{
+  font-size: 2vw;
+  width: 100%;
+}
+li.autor{
+  font-size: 2vw;
+  width: 100%;
+}
 /* The Close Button */
 .close {
   color: #aaa;
@@ -571,11 +583,11 @@ p{
 .todo{
   flex-wrap: wrap;
   display: flex;
+  align-items: flex-start;
 }
 .chicos{
   float: left;
   width: 48%;
-  margin: auto;
 }
 #titulo{
   width: 100%;
@@ -592,18 +604,24 @@ p{
   background-color: violet;
 }
 /* button style */
-.try{
+div.try{
   background:#1AAB8A;
   color:#fff;
   border:none;
   position:relative;
-  height:60px;
-  font-size:18px;;
+  /* height:60px; */
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
   margin-bottom: 6px;
+}
+button.try{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  font-size: 1.5vw;
+  transition:800ms ease all;
 }
 .try:hover{
   background:#fff;
@@ -669,6 +687,71 @@ p.preguntas{
   /* height: 250px; */
 
 }
+/*ADMIN*/
+div.admin-navbar{
+  margin-top: 198px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+ul.admin-navbar-lista{
+  display: flex;
+}
+li.admin-navbar-item{
+  width: 20%;
+}
+a.admin-navbar-link{
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+div.admin-container{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+h2.admin-titulo{
+
+}
+ul.admin-ventas-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #FFF;
+  border: solid #2D4F6B;
+  padding: 0;
+}
+li.admin-campo{
+  width: 12%;
+  font-size: 1.8vw;
+  font-weight: bold;
+  color: #000;
+}
+.admin-ventas-lista{
+  width: 100%;
+}
+ul.admin-ventas-lista{
+  display: flex;
+  justify-content: space-between;
+  padding:0;
+}
+li.admin-ventas-lista{
+  background-color: #9BADBB;
+  border-top: solid #000;
+  border-left: solid #000;
+  border-right: solid #000;
+}
+ul.lista-ventas{
+  width: 100%;
+  padding:0;
+  border-bottom: solid #000;
+}
+li.admin-campo-venta{
+  width: 12%;
+  font-size: 1.5vw;
+  text-align: center;
+
+}
 @media (max-width: 990px) {
 #hijo3{
   width: 50%;
@@ -689,6 +772,145 @@ p.preguntas{
 h2.preguntas{
   text-align: center;
 }
+}
+/*Compra*/
+h3.compra{
+  color: #014D6F;
+}
+div.compra-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.compra-grande{
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 90%;
+}
+.compra-chico{
+  width: 45%;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  text-align: left;
+  margin: 5px;
+  background-color: #9DADBC;
+  border: none;
+}
+ div.mas-chico{
+  margin-top: 5vh;
+}
+@media (max-width:  1000px) {
+.compra-chico{
+  width: 100%;
+}
+
+}
+input.compra{
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+#no-tan-grande{
+  width: 30%;
+}
+.bold{
+  font-weight:bolder;
+  color: #014D6F;
+}
+.infomacion{
+  float: left;
+  width: 100%;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 10px;
+  background-color: #9DADBC;
+  border: none;
+}
+#cancelar-background{
+  border: none;
+}
+img.compra-foto{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 2vh;
+  border: solid white;
+}
+#mas-estilo{
+  /* background-image: url(/img/bookishfoto1.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  height: 400px;
+  text-align: center; */
+}
+.infomacion-distinto{
+  float: left;
+  width: 100%;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 10px;
+  /* height: 100px; */
+  border: none;
+  text-align: center;
+}
+.distinto{
+  color: #014D6F;
+  font-weight: bolder;
+  font-size: 2vw;
+}
+.centrados{
+  text-align: center;
+  font-family: 'Teko', sans-serif;
+  font-size: 22px;
+}
+#centrados{
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    font-size: 27px;
+}
+@media (max-width:  1000px) {
+  #mas-estilo{
+    display: none;
+  }
+}
+/*Compra Realizada!*/
+div.compra-realizada-mayor{
+  background-color: #9DADBC;
+  width: 100%;
+  padding-top: 5vh;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 5vh;
+}
+h1.compra-realizada{
+font-size: 3vw;
+color: #000000;
+text-align: center;
+}
+h3.compra-realizada{
+  font-size: 2.5vw;
+  color: #000000;
+  text-align: center;
+}
+h4.compra-realizada{
+text-align: center;
+  font-size: 2vw;
+  color: #000000;
+  text-align: center;
 }
 @media (max-width : 600px){
   /*HEADER*/
@@ -846,13 +1068,28 @@ h1.white{
   top:50%;
 }
 .modal{margin-top: 120px;}
+li.titulo-libro{
+  font-size: 3vw;
+}
+li.autor{
+  font-size: 3vw;
+}
+/*COMPRAR*/
+.distinto{
+  font-size: 4vw;
+}
+div.mas-chico{
+  margin-top: 2vh;
+}
 }
 @media (max-width: 800px) {
   .chico{
     width: 100%;
     margin-top: 15px;
   }
-
+button.try{
+  font-size: 3vw;
+}
 }
 @media (max-width: 680px) {
   .chicos{

@@ -56,11 +56,7 @@
                             @endif
       </li>
                         @else
-                          @if (Auth::user()->role=='USER')
                           <a href="#" class="menucorto">{{Auth::user()->name}}</a>
-                        @else
-                          <a href="#" class="menucorto">Vista de Administrador</a>
-                        @endif
                           /
                                     <a class="menucorto" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -83,26 +79,80 @@
                 <li class="header"><a href="/quienes-somos" class="header menulargo">QUIENES SOMOS</a></li>
             </ul>
           </header>
-        <main>
-            @yield('content')
-        </main>
-        <footer>
-          <div class="flex-container">
-            <ul class="listagrande">
-              <li class="menucortobold">CONTACTO</li>
-              <li class="menucortomini">BOOKISH.LIBROS@GMAIL.COM</li>
-              <li class="menucortomini">+54 9 11 56541925</li>
-              <li class="menucortobold">SEGUINOS EN @BOOKISH.LIBROS</li>
+
+
+
+          <div class="admin-navbar">
+            <ul class="admin-navbar-lista">
+              <li class="admin-navbar-item"><a class="admin-navbar-link" href="{{"ver-ventas"}}">Ventas</a></li>
+              <li class="admin-navbar-item"><a class="admin-navbar-link" href="{{"admin-categorias"}}">Categorías</a></li>
             </ul>
-            <div class="data"><img class="data" src="img/bookish-05.jpg" alt="">
-            </div>
           </div>
-        </footer>
-        <script src="js/app.js">
+          <div class="admin-container">
+            <h2 class="admin-titulo">Pendientes de entrega:</h2>
+              <ul class="admin-ventas-container">
+                <li class="admin-campo">Nombre:</li>
+                <li class="admin-campo">Apellido:</li>
+                <li class="admin-campo">Provincia:</li>
+                <li class="admin-campo">Ciudad:</li>
+                <li class="admin-campo">Dirección:</li>
+                <li class="admin-campo">Categoría</li>
+                <li class="admin-campo">Modalidad</li>
+                <li class="admin-campo">Marcar como Entregado</li>
+              </ul>
+              <form class="admin-entrega" action="{{"/marcar-entregado"}}" method="post">
+                @csrf
+              <ul class="admin-ventas-lista">
+                <li class="admin-ventas-lista">
+                  @foreach ($pendientes as $pendiente)
+                  <ul class="lista-ventas">
+                    @foreach ($users as $user)
+                      @if ($pendiente->user_id==$user->id)
+                        <li class="admin-campo-venta">{{$user->name}}</li>
+                        <li class="admin-campo-venta">{{$user->surname}}</li>
+                        <li class="admin-campo-venta">{{$user->province}}</li>
+                        <li class="admin-campo-venta">{{$user->city}}</li>
+                        <li class="admin-campo-venta">{{"$user->street $user->number"}}</li>
+                      @endif
+                    @endforeach
+                    @foreach ($subscriptions as $subscription)
 
-        </script>
-        <script src="js/transitions.js">
+                      @if ($pendiente->subscription_id==$subscription->id)
+                        @foreach ($categories as $category)
+                          @if ($subscription->category_id==$category->id)
+                  <li class="admin-campo-venta">{{$category->title}}</li>
+                          @endif
+                        @endforeach
+                      @endif
+                    @endforeach
+                @foreach ($subscriptions as $subscription)
+                  @if ($pendiente->subscription_id == $subscription->id)
+                    @foreach ($modalities as $modality)
+                      @if ($subscription->modality_id==$modality->id)
 
-        </script>
-</body>
-</html>
+                  <li class="admin-campo-venta">{{$modality->name}}</li>
+                      @endif
+                    @endforeach
+                  @endif
+                @endforeach
+                  <li class="admin-campo-venta">   <input type="checkbox" name="{{$pendiente->id}}" value="{{$pendiente->id}}">  </li>
+                </ul>
+              @endforeach
+                </li>
+              </ul>
+              <div class="input-container">
+
+              <button type="submit" name="" class="boton-enviar">Entregado</button>
+            </div>
+            </form>
+          </div>
+
+
+          <script src="js/app.js">
+
+          </script>
+          <script src="js/transitions.js">
+
+          </script>
+          </body>
+          </html>

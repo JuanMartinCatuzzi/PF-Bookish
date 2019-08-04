@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+@if (Auth::user()->role=="ADMIN")
+  <div class="admin-navbar">
+    <ul class="admin-navbar-lista">
+      <li class="admin-navbar-item"><a class="admin-navbar-link" href="{{"ver-ventas"}}">Ventas</a></li>
+      <li class="admin-navbar-item"><a class="admin-navbar-link" href="{{"admin-categorias"}}">Categorías</a></li>
+    </ul>
+  </div>
+@endif
+
 
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">

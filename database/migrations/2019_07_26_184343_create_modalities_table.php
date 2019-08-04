@@ -16,8 +16,6 @@ class CreateModalitiesTable extends Migration
         Schema::create('modalities', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->enum('name', ['REGULAR', 'INTENSIVO']);
-            $table->unsignedBigInteger('subscription_id');
-
             $table->timestamps();
         });
     }

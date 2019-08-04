@@ -15,12 +15,24 @@ use App\Http\Middleware\CheckAdmin;
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+//Páginas de nosotros
 Route::get('/quienes-somos', function (){
   return view('quienes-somos');
 });
 Route::get('/preguntas',function(){
   return view('preguntas');
 });
-Route::get('/categorias', 'CategoryController@index');
 
-Route::get('/control-panel', function(){})->middleware('CheckAdmin');  //Revisar
+//Páginas de productos
+Route::get('/categorias', 'CategoryController@index');
+Route::get('/comprar-regular', 'CategoryController@comprarRegular');
+Route::get('/comprar-intensivo', 'CategoryController@comprarIntensivo');
+Route::post('/comprar', 'CategoryController@comprar');
+Route::post('/compra-realizada', 'CartController@store');
+
+
+Route::get('/ver-ventas', 'CartController@administrarVentas');
+Route::post('marcar-entregado', 'CartController@marcarComoEntregado');
+
+Route::get('/admin-categorias', 'CategoryController@administrarCategorias');

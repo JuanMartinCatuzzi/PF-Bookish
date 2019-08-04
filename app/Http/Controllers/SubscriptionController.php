@@ -46,7 +46,7 @@ class SubscriptionController extends Controller
      */
     public function show(Subscription $subscription)
     {
-        //
+
     }
 
     /**

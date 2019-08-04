@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Subscription;
+use App\Category;
+use App\Modality;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -35,7 +41,19 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      //dd($request['subscription']);
+        $subscriptions = Subscription::all();
+        $user=Auth::user()->id;
+        foreach ($subscriptions as $subscription) {
+          if ($subscription->id == $request["subscription"]) {
+            $compra = $subscription;
+          }
+        }
+        //dd($compra);
+        DB::table('carts')->insertGetId(
+          ['user_id'=>$user, 'subscription_id'=>$compra->id, 'estado'=>'PENDIENTE']
+        );
+        return view('compra-realizada');
     }
 
     /**
@@ -81,5 +99,31 @@ class CartController extends Controller
     public function destroy(Cart $cart)
     {
         //
+    }
+    public function administrarVentas(){
+      $pendientes = DB::table('carts')->where('estado', '=', 'PENDIENTE')->get();
+      // dd($pendientes);
+      $subscriptions=Subscription::all();
+      $categories = Category::all();
+      $modalities = Modality::all();
+      $users = User::all();
+      // dd($users);
+
+      return view('admin-ventas')->with('pendientes', $pendientes)->with('categories', $categories)->with('modalities', $modalities)->with('users', $users)->with('subscriptions', $subscriptions);
+    }
+    public function marcarComoEntregado(Request $request){
+      //dd($request);
+      $pendientes = DB::table('carts')->where('estado', '=', 'PENDIENTE')->get();
+      $marcados = $request->all();
+       //dd($request);
+       // dd($marcados);
+       foreach ($marcados as $marcado =>$valor) {
+        foreach ($pendientes as $pendiente) {
+          if ($valor == $pendiente->id) {
+            DB::table('carts')->where('id', '=', $request[$pendiente->id])->update(['estado'=>'ENTREGADO']);
+          }
+          }
+      }
+      return redirect('/ver-ventas');
     }
 }

@@ -56,11 +56,7 @@
                             @endif
       </li>
                         @else
-                          @if (Auth::user()->role=='USER')
                           <a href="#" class="menucorto">{{Auth::user()->name}}</a>
-                        @else
-                          <a href="#" class="menucorto">Vista de Administrador</a>
-                        @endif
                           /
                                     <a class="menucorto" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -83,26 +79,14 @@
                 <li class="header"><a href="/quienes-somos" class="header menulargo">QUIENES SOMOS</a></li>
             </ul>
           </header>
-        <main>
-            @yield('content')
-        </main>
-        <footer>
-          <div class="flex-container">
-            <ul class="listagrande">
-              <li class="menucortobold">CONTACTO</li>
-              <li class="menucortomini">BOOKISH.LIBROS@GMAIL.COM</li>
-              <li class="menucortomini">+54 9 11 56541925</li>
-              <li class="menucortobold">SEGUINOS EN @BOOKISH.LIBROS</li>
+
+
+
+          <div class="admin-navbar">
+            <ul class="admin-navbar-lista">
+              <li class="admin-navbar-item"><a class="admin-navbar-link" href="{{"ver-ventas"}}">Ventas</a></li>
+              <li class="admin-navbar-item"><a class="admin-navbar-link" href="{{"admin-categorias"}}">Categorías</a></li>
             </ul>
-            <div class="data"><img class="data" src="img/bookish-05.jpg" alt="">
-            </div>
           </div>
-        </footer>
-        <script src="js/app.js">
 
-        </script>
-        <script src="js/transitions.js">
-
-        </script>
-</body>
-</html>
+          
