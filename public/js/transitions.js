@@ -24,3 +24,12 @@ window.addEventListener('load', function(){
       }
     })
   })
+
+// function bajarDropdown(){
+//   var drop = document.getElementById(action)
+//   var dropContent = document.querySelector('.dropdown-content')
+//   dropContent.style.display = 'block'
+//   window.addEventListener('click', function(){
+//
+//   })
+// }

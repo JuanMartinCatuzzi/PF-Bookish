@@ -28,11 +28,11 @@
       <div class="header-container">
     <div class="navbar">
       <div class="dropdown">
-        <button class="dropbtn" id="action" href="action">
+        <button class="dropbtn" id="action" href="action" >
         <i class="fa fa-ellipsis-v"></i>
         </button>
         <div id="action"class="dropdown-content">
-          <a href="#">PREGUNTAS FRECUENTES</a>
+          <a href="{{"/preguntas"}}">PREGUNTAS FRECUENTES</a>
           <a href="{{ route('register') }}">REGISTRARSE</a>
           <a href="{{ route('login') }}">LOG IN </a>
           <a href="#">PORQUE LEER CON BOOKISH</a>
@@ -45,7 +45,7 @@
 </div>
 <!--PRIMER FILA INCLUYENDO LOGO -->
     <ul class="listagrande-header">
-      <li class="menucorto header" id="chau">PREGUNTAS FRECUENTES</li>
+      <li class="menucorto header" id="chau"><a class="menucorto header" href="{{"/preguntas"}}">PREGUNTAS FRECUENTES</a></li>
       <li class="menucorto dentrodemenu"> <a href="{{route('home')}}"> <img class="logo" src="img/Bookish.png" alt=""></a></li>
       <li class="menucorto header" id="chau">
                         @guest

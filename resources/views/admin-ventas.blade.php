@@ -96,8 +96,8 @@
                 <li class="admin-campo">Provincia:</li>
                 <li class="admin-campo">Ciudad:</li>
                 <li class="admin-campo">Dirección:</li>
-                <li class="admin-campo">Categoría</li>
-                <li class="admin-campo">Modalidad</li>
+                <li class="admin-campo">Categoría:</li>
+                <li class="admin-campo">Modalidad:</li>
                 <li class="admin-campo">Marcar como Entregado</li>
               </ul>
               <form class="admin-entrega" action="{{"/marcar-entregado"}}" method="post">

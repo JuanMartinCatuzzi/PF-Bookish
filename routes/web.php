@@ -36,3 +36,7 @@ Route::get('/ver-ventas', 'CartController@administrarVentas');
 Route::post('marcar-entregado', 'CartController@marcarComoEntregado');
 
 Route::get('/admin-categorias', 'CategoryController@administrarCategorias');
+Route::post('/agregar-categoria', 'CategoryController@store');
+Route::get('/admin-categoria-{id}', 'CategoryController@show');
+
+Route::get('/eliminar-categoria-{id}', 'CategoryController@destroy');

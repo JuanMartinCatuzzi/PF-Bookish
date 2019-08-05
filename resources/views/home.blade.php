@@ -26,7 +26,7 @@
       <div class="carousel-item">
         <h2 class="home-frase">"NO IMPORTA LO OCUPADO QUE PIENSAS QUE ESTÁS, DEBES ENCONTRAR TIEMPO PARA LEER, O ENTRÉGATE A UNA IGNORANCIA AUTOELEGIDA."</h2>
         <p class="home-autor">-Confucio.</p>
-        <img class="d-block w-100" src="/img/bookish-02.jpg" alt="Second slide">
+         <img class="d-block w-100" src="/img/bookish-02.jpg" alt="Second slide">
       </div>
       <div class="carousel-item">
         <h2 class="home-frase">"NO TE PREOCUPES POR EL FRACASO, SÓLO DEBES ACERTAR UNA VEZ."</h2>
@@ -50,10 +50,14 @@
       </div>
       <div class="categorias">
         <div class="img primera">
+          <a href="{{"/quienes-somos"}}">
           <img src="img/bookish-03.jpg" alt="" class="articulo">
+          </a>
         </div>
         <div class="img segunda">
+          <a href="{{"/categorias"}}">
           <img src="img/bookish-04.jpg" alt="" class="articulo">
+          </a>
         </div>
       </div>
     </section>

@@ -120,7 +120,7 @@ div.carousel-item{
   position: relative;
 }
 h2.home-frase{
-  color:#FFF;
+  color:#000;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 40%;
@@ -134,7 +134,7 @@ p.home-autor{
     transform: translate(-50%, -50%);
     top: 60%;
     left: 50%;
-    color: #FFF;
+    color: #000;
 }
 img.cabeza{
   width: 100%;
@@ -710,7 +710,7 @@ div.admin-container{
   margin-right: 5%;
 }
 h2.admin-titulo{
-
+  text-align: center;
 }
 ul.admin-ventas-container{
   display: flex;
@@ -745,6 +745,8 @@ ul.lista-ventas{
   width: 100%;
   padding:0;
   border-bottom: solid #000;
+  display: flex;
+  justify-content: space-between;
 }
 li.admin-campo-venta{
   width: 12%;
@@ -948,7 +950,6 @@ button.dropbtn{
   /* Navbar container */
   .navbar {
     display: inline-block;
-    overflow: hidden;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -965,7 +966,6 @@ button.dropbtn{
   /* The dropdown container */
   .dropdown {
     float: left;
-    overflow: hidden;
   }
 
   /* Dropdown button */
@@ -989,7 +989,8 @@ button.dropbtn{
     display: none;
     position: absolute;
     background-color: #2D4F6B;
-    min-width: 100%;
+    width: 100vw;
+    left: -75%;
     box-shadow: 0px 8px 16px 0px rgba(157, 173, 186, 1);
     z-index: 1;
   }
